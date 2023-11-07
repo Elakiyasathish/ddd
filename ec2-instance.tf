@@ -9,7 +9,7 @@ resource "aws_instance" "dev" {
 }
 
 resource "aws_instance" "prod" {
-  count  var.env == "prod" ? 3:0
+  count = var.env == "prod" ? 3:0
  
   ami                    = "ami-05c13eab67c5d8861"
   instance_type          = "t2.micro"
